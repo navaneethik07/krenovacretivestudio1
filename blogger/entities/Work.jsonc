@@ -1,0 +1,71 @@
+{
+  "name": "Work",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Project title"
+    },
+    "client": {
+      "type": "string",
+      "description": "Client or brand name"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "reel",
+        "vfx_sfx",
+        "content",
+        "long",
+        "poster"
+      ],
+      "enumColors": [
+        "purple",
+        "blue",
+        "green",
+        "yellow",
+        "pink"
+      ],
+      "description": "Type of work"
+    },
+    "description": {
+      "type": "string",
+      "description": "Short description"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Cover image URL"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "Video file or link (videos only)"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Show on the home page"
+    }
+  },
+  "required": [
+    "title",
+    "category"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
