@@ -1,1 +1,43 @@
-
+{
+  "name": "Inquiry",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string",
+      "description": "Email or phone"
+    },
+    "interest": {
+      "type": "string",
+      "description": "Service they are interested in"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "contact",
+    "message"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
