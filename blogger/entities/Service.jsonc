@@ -1,0 +1,69 @@
+{
+  "name": "Service",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Service name"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "reel",
+        "vfx_sfx",
+        "content",
+        "long",
+        "poster"
+      ],
+      "enumColors": [
+        "purple",
+        "blue",
+        "green",
+        "yellow",
+        "pink"
+      ]
+    },
+    "price": {
+      "type": "number",
+      "description": "Starting rate in INR"
+    },
+    "unit": {
+      "type": "string",
+      "description": "Per what, e.g. per reel"
+    },
+    "delivery": {
+      "type": "string",
+      "description": "Delivery time, e.g. 2 days"
+    },
+    "tools": {
+      "type": "string",
+      "description": "Tools used"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "price"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
